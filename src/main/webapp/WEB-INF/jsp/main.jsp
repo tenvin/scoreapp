@@ -11,8 +11,47 @@
 
 <body>
 
+<div>
+    <!-- header页面 -->
+    <div class="header">
+        <div class="logo_text" style="cursor: pointer;">学生成绩系统</div>
+        <div class="btn-container">
+            <a href=""><img title="个人信息" src="/resources/img/user.png"></a>
+            <a href="" onclick="logOut()"><img title="退出" src="/resources/img/exit.png"></a>
+        </div>
+    </div>
+    <%--<div class="ct"></div>--%>
+    <div style="width: 100%; height: 83%">
+        <!-- 左侧菜单列表 -->
+        <div class="leftMenu">
+            <nav class="menu" data-ride="menu" style="width: 100%">
+                <ul class="nav nav-primary nav-stacked">
+                    <li><a href="/upload" target="rightFrame"><i class="icon icon-list-ul"></i> 导入成绩</a></li>
+                    <li><a href="/score" target="rightFrame"><i class="icon icon-user"></i> 查询成绩</a></li>
+
+                </ul>
+            </nav>
+        </div>
+        <!-- 右侧内容区域 -->
+        <div class="rightMenu">
+            <iframe name="rightFrame"
+                    id="rightFrame"
+                    src=""
+                    width="100%"
+                    height="100%"
+                    frameborder="0"
+            ></iframe>
+        </div>
+    </div>
+    <div style="width: 100%; height: 5%">
+    </div>
+</div>
 
 </body>
-
+<script type="text/javascript" src="/resources/lib/jquery-1.7.2.min.js"></script>
+<!-- ZUI 标准版压缩后的 JavaScript 文件 -->
+<script src="/resources/lib/zui-1.6.0/js/zui.min.js"></script>
+<script src="/resources/lib/zui-1.6.0/lib/datetimepicker/datetimepicker.min.js"></script>
+<script src="/resources/lib/zui-1.6.0/lib/chosen/chosen.min.js"></script>
 <script src="/resources/js/scoreapp.js" type="text/javascript"></script>
 </html>

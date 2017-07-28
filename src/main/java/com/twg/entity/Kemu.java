@@ -11,22 +11,22 @@ import javax.persistence.Id;
 public class Kemu {
     @Id
     @GeneratedValue
-    private long kid;
+    private long kmId;
 
-    private String name;
+    private String kmName;
 
     public Kemu(String name) {
-        this.name = name;
+        this.kmName = name;
     }
 
     public Kemu() {
     }
 
     public String getName() {
-        return name;
+        return kmName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.kmName = name;
     }
 }

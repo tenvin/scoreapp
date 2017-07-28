@@ -47,7 +47,7 @@ public class SpringTest {
         Student student = null;
         for(int i =0;i<10;i++){
             student = new Student();
-            student.setName("test"+i);
+            student.setXsName("test"+i);
             studentService.save(student);
         }
     }

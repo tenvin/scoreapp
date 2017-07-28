@@ -9,9 +9,9 @@ import javax.persistence.*;
 public class Student {
     @Id
     @GeneratedValue
-    private long sid;
+    private long xsId;
     //姓名
-    private String name;
+    private String xsName;
 //    //性别
 //    private boolean xb;
 //    //身份证
@@ -23,23 +23,16 @@ public class Student {
     public Student() {
     }
 
-    public Student(String name) {
-        this.name = name;
+    public String getXsName() {
+        return xsName;
     }
 
-    public String getName() {
-        return name;
+    public void setXsName(String xsName) {
+        this.xsName = xsName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public Student(String xsName) {
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "sid=" + sid +
-                ", name='" + name + '\'' +
-                '}';
+        this.xsName = xsName;
     }
 }

@@ -8,5 +8,5 @@ import org.springframework.data.repository.Repository;
  * Created by tenvin on 2017/7/26.
  */
 public interface StudentRepository extends JpaRepository<Student, Long> {
-    public Student findByName(String name);
+    public Student findByXsName(String name);
 }

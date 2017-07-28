@@ -9,34 +9,35 @@ import javax.persistence.*;
 public class Score {
     @Id
     @GeneratedValue
-    private long id;
+    private long scoreId;
 
     @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-    @JoinColumn(name = "sid")
+    @JoinColumn(name = "xsId")
     private Student student;//学生
 
-//    private String nianji;//年级
-//
-//    private String banji;//班级
-
-    //    private String xueqi;//学期
-//    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-//    @JoinColumn(name = "id", insertable = false, updatable = false)
-//    private Zhuanye zhuanye;//专业
-//
     @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-    @JoinColumn(name = "kid")
+    @JoinColumn(name = "zyId", insertable = false, updatable = false)
+    private Zhuanye zhuanye;//专业
+
+    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "kmId")
     private Kemu kemu;//科目
+
+    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "xqId")
+    private Xueqi xueqi;//学期
 
     private String fenshu;//分数
 
     public Score() {
     }
 
-    public Score(Student student, Zhuanye zhuanye, Kemu kemu, String fenshu) {
-        this.student = student;
+    public long getScoreId() {
+        return scoreId;
+    }
 
-        this.fenshu = fenshu;
+    public void setScoreId(long scoreId) {
+        this.scoreId = scoreId;
     }
 
     public Student getStudent() {
@@ -47,11 +48,44 @@ public class Score {
         this.student = student;
     }
 
+    public Zhuanye getZhuanye() {
+        return zhuanye;
+    }
+
+    public void setZhuanye(Zhuanye zhuanye) {
+        this.zhuanye = zhuanye;
+    }
+
+    public Kemu getKemu() {
+        return kemu;
+    }
+
+    public void setKemu(Kemu kemu) {
+        this.kemu = kemu;
+    }
+
+    public Xueqi getXueqi() {
+        return xueqi;
+    }
+
+    public void setXueqi(Xueqi xueqi) {
+        this.xueqi = xueqi;
+    }
+
     public String getFenshu() {
         return fenshu;
     }
 
     public void setFenshu(String fenshu) {
+        this.fenshu = fenshu;
+    }
+
+    public Score(Student student, Zhuanye zhuanye, Kemu kemu, Xueqi xueqi, String fenshu) {
+
+        this.student = student;
+        this.zhuanye = zhuanye;
+        this.kemu = kemu;
+        this.xueqi = xueqi;
         this.fenshu = fenshu;
     }
 }

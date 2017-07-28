@@ -17,7 +17,7 @@ public class StudentServiceImpl implements StudentService {
     StudentRepository studentRepository;
 
     public Student findByName(String name) {
-        return studentRepository.findByName(name);
+        return studentRepository.findByXsName(name);
     }
 
     public Student get(Long aLong) {
@@ -30,5 +30,9 @@ public class StudentServiceImpl implements StudentService {
 
     public void delete(Long aLong) {
         studentRepository.delete(aLong);
+    }
+
+    public List<Student> findAll() {
+        return null;
     }
 }
