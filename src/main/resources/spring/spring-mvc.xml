@@ -58,7 +58,7 @@
     <!--<mvc:mapping path="/examPlace/*"/>-->
     <!--<mvc:mapping path="/user/*"/>-->
     <!--<mvc:mapping path="/score/*"/>-->
-    <!--<mvc:exclude-mapping path="/index.jsp"/>-->
+    <!--<mvc:exclude-mapping path="/index.html/>-->
     <!--<bean class="edu.xpu.project.common.interception.LoginInterception" />-->
     <!--</mvc:interceptor>-->
     <!--</mvc:interceptors>-->

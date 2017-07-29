@@ -1,16 +1,17 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height:auto;
     font-family: "微软雅黑";
     font-size: 9pt;
 }
 
+.wrapper{
+    height: 500px;
+}
+
 .header {
-    /*background-image: -moz-linear-gradient(0deg, rgb(55, 139, 211) 1%, rgb(48, 200, 202) 100%);*/
-    /*background-image: -webkit-linear-gradient(0deg, rgb(55, 139, 211) 1%, rgb(48, 200, 202) 100%);*/
-    /*background-image: -ms-linear-gradient(0deg, rgb(55, 139, 211) 1%, rgb(48, 200, 202) 100%);*/
-    background: #0d3d88;
+    background: rgb(50,128,252);
     width: 100%;
     height: 62px;
 }
@@ -23,13 +24,7 @@ html, body {
     float: left;
 }
 
-.ct {
-    background-image: -moz-linear-gradient(0deg, rgb(158, 1, 192) 7%, rgb(1, 60, 182) 25%, rgb(1, 171, 57) 43%, rgb(252, 167, 4) 75%, rgb(199, 15, 2) 100%);
-    background-image: -webkit-linear-gradient(0deg, rgb(158, 1, 192) 7%, rgb(1, 60, 182) 25%, rgb(1, 171, 57) 43%, rgb(252, 167, 4) 75%, rgb(199, 15, 2) 100%);
-    background-image: -ms-linear-gradient(0deg, rgb(158, 1, 192) 7%, rgb(1, 60, 182) 25%, rgb(1, 171, 57) 43%, rgb(252, 167, 4) 75%, rgb(199, 15, 2) 100%);
-    width: 100%;
-    height: 6px;
-}
+
 
 .header .btn-container {
     float: right;
@@ -42,7 +37,7 @@ html, body {
     margin-right: 20px;
 }
 
-.leftMenu {
+.left {
     float: left;
     width: 20%;
     height: 100%;
@@ -50,14 +45,27 @@ html, body {
     background-color: #ECECEC;
     font-size: 14px;
     font-weight: bold;
+
 }
 
-.rightMenu {
+.right {
     width: 80%;
+    height:100%;
+    margin-top: 5px;
     float: left;
-    height: 100%;
+
 }
 
+.panel {
+    border: 0;
+}
+.container{
+    margin: 0 20px;
+}
 .uploaderWrapper{
     margin-left: 10px;
+}
+
+.select-margin select {
+    margin-right: 20px;
 }

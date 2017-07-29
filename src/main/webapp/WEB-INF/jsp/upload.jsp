@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<div class="upload">
+<div class="container">
 
     <div>
         <form id="uploadFile" action="/upload" method="post" enctype="multipart/form-data">
@@ -45,6 +45,36 @@
 <script src="/resources/lib/zui-1.6.0/lib/chosen/chosen.min.js"></script>
 <script src="/resources/lib/zui-1.6.0/lib/uploader/zui.uploader.min.js"></script>
 <script>
-
+    var opts = {
+        autoUpload: true,            // 当选择文件后立即自动进行上传操作
+        url: '${path}/score/excelImport',  // 文件上传提交地址
+        file_data_name: 'file',			//定义表单参数
+        filters: {						//指定上传文件的类型、大小
+            mime_types: [
+                {title: 'excel文件', extensions: 'xls,xlsx'}
+            ],
+            max_file_size: '100mb'
+        },
+        chunk_size: '0',
+        multipart_params: {
+            randNum: Math.random()
+        },
+        onFileUpload: function(file) {
+            layer.alert('上传成功1111111111111')
+        },
+        //当某一个文件上传完成后回调
+        onFileUploaded: function(file, responseObject) {
+            alert('上传成功!');
+            var jsonObj = JSON.parse(responseObject.response);
+            if (jsonObj.status == 'error') {
+                layer.alert('选择Excel文件格式或内容出错!');
+            } else if (jsonObj.status == 'success') {
+                layer.alert('Excel文件上传成功!');
+            } else {
+                layer.alert('nothing');
+            }
+        }
+    };
+    $('#uploaderExcel').uploader(opts);
 </script>
 </html>
