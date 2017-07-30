@@ -63,27 +63,13 @@
                     <label>姓名</label>
                     <input type="text" class="form-control" placeholder="姓名">
                 </div>
-                <a class="btn btn-primary" href="#">查询</a>
+                <a id="chaxun" class="btn btn-primary" href="#">查询</a>
             </div>
 
             <br>
+            <button id="test" class="btn btn-primary" type="button">按钮</button>
             <table class="table datatable">
-                <thead>
-                <tr>
-                    <th>专业</th>
-                    <th>班级</th>
-                    <th>科目</th>
-                    <th>学号</th>
-                    <th>姓名</th>
-                    <th>得分</th>
 
-                </tr>
-                </thead>
-                <tbody>
-                <tr></tr>
-                <tr></tr>
-
-                </tbody>
             </table>
         </div>
     </div>
@@ -98,25 +84,8 @@
 <script src="/resources/lib/zui-1.6.0/lib/chosen/chosen.min.js"></script>
 <script src="/resources/lib/zui-1.6.0/lib/uploader/zui.uploader.min.js"></script>
 <script src="/resources/lib/zui-1.6.0/lib/datatable/zui.datatable.min.js"></script>
-<script>
-    var opts = {
-        autoUpload: true,            // 当选择文件后立即自动进行上传操作
-        url: '/upload',  // 文件上传提交地址
-        file_data_name: 'file',			//定义表单参数
-        filters: {						//指定上传文件的类型、大小
-            mime_types: [
-                {title: 'excel文件', extensions: 'xls,xlsx'}
-            ],
-            max_file_size: '10mb'
-        },
-        chunk_size: '0',
-        multipart_params: {
-            randNum: Math.random()
-        }
 
-    };
-    $('#uploaderExcel').uploader(opts);
 
-    $('table.datatable').datatable({checkable: true, sortable: true});
-</script>
+<script src="/resources/js/scoreapp.js"></script>
+
 </html>

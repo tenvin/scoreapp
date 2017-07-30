@@ -1,6 +1,7 @@
 package com.twg.service;
 
-import com.twg.entity.Xueqi;
+import com.twg.entity.Score;
+import com.twg.repository.ScoreRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -14,20 +15,20 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
- * Created by tenvin on 2017/7/28.
+ * Created by tenvin on 2017/7/30.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"classpath:spring/applicationContext.xml"})
-public class XueqiServiceTest {
+public class ScoreServiceTest {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private XueqiService xueqiService;
+    ScoreService scoreService;
 
     @Test
-    public void testGetSeckillList() throws Exception {
-        List<Xueqi> xueqis=xueqiService.findAll();
-        logger.info("xueqis={}",xueqis);
+    public void testFindAll(){
+        List<Score> scores = scoreService.findAll();
+        logger.info("scores={}",scores);
     }
 
 }

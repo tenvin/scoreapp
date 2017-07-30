@@ -27,7 +27,7 @@ public class Score {
     @JoinColumn(name = "xqId")
     private Xueqi xueqi;//学期
 
-    private String fenshu;//分数
+    private float fenshu;//分数
 
     public Score() {
     }
@@ -72,20 +72,32 @@ public class Score {
         this.xueqi = xueqi;
     }
 
-    public String getFenshu() {
+    public float getFenshu() {
         return fenshu;
     }
 
-    public void setFenshu(String fenshu) {
+    public void setFenshu(float fenshu) {
         this.fenshu = fenshu;
     }
 
-    public Score(Student student, Zhuanye zhuanye, Kemu kemu, Xueqi xueqi, String fenshu) {
+    public Score(Student student, Zhuanye zhuanye, Kemu kemu, Xueqi xueqi, float fenshu) {
 
         this.student = student;
         this.zhuanye = zhuanye;
         this.kemu = kemu;
         this.xueqi = xueqi;
         this.fenshu = fenshu;
+    }
+
+    @Override
+    public String toString() {
+        return "Score{" +
+                "scoreId=" + scoreId +
+                ", student=" + student +
+                ", zhuanye=" + zhuanye +
+                ", kemu=" + kemu +
+                ", xueqi=" + xueqi +
+                ", fenshu=" + fenshu +
+                '}';
     }
 }

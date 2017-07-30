@@ -15,7 +15,7 @@ public class Zhuanye {
     private String zyName;//专业名
 
     @OneToMany(cascade = {CascadeType.ALL},fetch = FetchType.LAZY)
-    @JoinColumn(name = "zyid")
+    @JoinColumn(name = "zyId")
     private Set<Kemu> kemus;
 
     public Zhuanye() {
