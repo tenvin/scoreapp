@@ -9,16 +9,9 @@ import javax.persistence.*;
 public class Student {
     @Id
     @GeneratedValue
-    private long xsId;
-    //姓名
-    private String xsName;
-//    //性别
-//    private boolean xb;
-//    //身份证
-//    private String idcard;
-//    //学号
-//    private String xh;
+    private int xsId;
 
+    private String xsName;
 
     public Student() {
     }
@@ -34,5 +27,13 @@ public class Student {
     public Student(String xsName) {
 
         this.xsName = xsName;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "xsId=" + xsId +
+                ", xsName='" + xsName + '\'' +
+                '}';
     }
 }

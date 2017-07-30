@@ -11,7 +11,7 @@ import javax.persistence.Id;
 public class Kemu {
     @Id
     @GeneratedValue
-    private long kmId;
+    private int kmId;
 
     private String kmName;
 
@@ -28,5 +28,13 @@ public class Kemu {
 
     public void setName(String name) {
         this.kmName = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Kemu{" +
+                "kmId=" + kmId +
+                ", kmName='" + kmName + '\'' +
+                '}';
     }
 }

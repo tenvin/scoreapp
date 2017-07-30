@@ -18,28 +18,34 @@ $('#uploaderExcel').uploader(opts);
 
 $('table.datatable').datatable();
 
-$('#test').click(function () {
-    console.log("click button");
-    $('table.datatable').datatable('load', {
-        cols: [
-            {width: 80, text: '#', type: 'number', flex: false, colClass: 'text-center'},
-            {width: 160, text: '时间', type: 'date', flex: false, sort: 'down'},
-            {width: 80, text: '名称', type: 'string', flex: true, colClass: ''}
-        ],
-        rows: [
-            {checked: false, data: [1, '2016-01-18 11:09:36', '新的名称示例1']},
-            {checked: false, data: [2, '2016-01-22 12:06:16', '新的名称示例2']},
-
-        ]
-    });
-});
 
 $('#chaxun').click(function () {
     //1.查数据
-    $.get(url,{},function (result) {
 
+    $.get('/query',{},function (result) {
+        if(result && result['success']){
+            var jsonResult = result['data'];
+            console.log(jsonResult);
+
+            var list1=[];
+            var list3=[];
+            $.each(jsonResult, function(idx, obj) {
+                list1=[idx,obj['student']['xsName'],obj['kemu']['name'],obj['fenshu']];
+                var list2={checked: true, data:list1};
+                list3.push(list2);
+            });
+
+
+            $('table.datatable').datatable('load', {
+                cols: [
+                    {width: '20px', text: '#', type: 'string', flex: false, colClass: 'text-center'},
+                    {width: 80, text: '姓名', type: 'string', flex: false, colClass: ''},
+                    {width: 80, text: '科目', type: 'string', flex: true, colClass: ''},
+                    {width: 80, text: '成绩', type: 'string', flex: true, colClass: ''},
+
+                ],
+                rows: list3
+            });
+        }
     })
-
-    //2.显示数据
-
 });

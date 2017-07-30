@@ -21,6 +21,7 @@
         <div class="panel-body">
 
             <div id="uploaderExcel" class="uploader">
+                <div class="file-list" data-drag-placeholder="请拖拽文件到此处"></div>
                 <button type="button" class="btn btn-primary uploader-btn-browse"><i class="icon icon-cloud-upload"></i>导入excel</button>
             </div>
             <br>
@@ -55,19 +56,19 @@
             <br>
             <div class="form-inline">
                 <div class="form-group">
-                    <label>学号</label>
+                    <label>学号 </label>
                     <input type="text" class="form-control" placeholder="学号">
                 </div>
                 <span></span>
                 <div class="form-group">
-                    <label>姓名</label>
+                    <label>姓名 </label>
                     <input type="text" class="form-control" placeholder="姓名">
                 </div>
                 <a id="chaxun" class="btn btn-primary" href="#">查询</a>
             </div>
 
             <br>
-            <button id="test" class="btn btn-primary" type="button">按钮</button>
+
             <table class="table datatable">
 
             </table>

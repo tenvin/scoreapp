@@ -9,21 +9,25 @@ import javax.persistence.*;
 public class Score {
     @Id
     @GeneratedValue
-    private long scoreId;
+    private int scoreId;
 
-    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = {CascadeType.ALL},fetch = FetchType.EAGER)
+    @JoinColumn(name = "bjId")
+    private Banji banji;
+
+    @ManyToOne(cascade = {CascadeType.ALL},fetch = FetchType.EAGER)
     @JoinColumn(name = "xsId")
     private Student student;//学生
 
-    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-    @JoinColumn(name = "zyId", insertable = false, updatable = false)
+    @ManyToOne(cascade = {CascadeType.ALL},fetch = FetchType.EAGER)
+    @JoinColumn(name = "zyId")
     private Zhuanye zhuanye;//专业
 
-    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = {CascadeType.ALL},fetch = FetchType.EAGER)
     @JoinColumn(name = "kmId")
     private Kemu kemu;//科目
 
-    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = {CascadeType.ALL},fetch = FetchType.EAGER)
     @JoinColumn(name = "xqId")
     private Xueqi xueqi;//学期
 
@@ -36,7 +40,7 @@ public class Score {
         return scoreId;
     }
 
-    public void setScoreId(long scoreId) {
+    public void setScoreId(int scoreId) {
         this.scoreId = scoreId;
     }
 
@@ -80,8 +84,16 @@ public class Score {
         this.fenshu = fenshu;
     }
 
-    public Score(Student student, Zhuanye zhuanye, Kemu kemu, Xueqi xueqi, float fenshu) {
+    public Banji getBanji() {
+        return banji;
+    }
 
+    public void setBanji(Banji banji) {
+        this.banji = banji;
+    }
+
+    public Score(Banji banji, Student student, Zhuanye zhuanye, Kemu kemu, Xueqi xueqi, float fenshu) {
+        this.banji = banji;
         this.student = student;
         this.zhuanye = zhuanye;
         this.kemu = kemu;
@@ -93,6 +105,7 @@ public class Score {
     public String toString() {
         return "Score{" +
                 "scoreId=" + scoreId +
+                ", banji=" + banji +
                 ", student=" + student +
                 ", zhuanye=" + zhuanye +
                 ", kemu=" + kemu +

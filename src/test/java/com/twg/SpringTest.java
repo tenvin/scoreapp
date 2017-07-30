@@ -2,7 +2,7 @@ package com.twg;
 
 import com.twg.entity.Student;
 import com.twg.service.StudentService;
-import com.twg.util.ExcelUtil;
+import com.twg.util.ParseExcel;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.junit.After;
 import org.junit.Before;
@@ -66,7 +66,7 @@ public class SpringTest {
             //1.读excel文件
             is = new FileInputStream("d:\\test2.xls");
 
-            Map<Integer, String> map = ExcelUtil.readExcelContent(is);
+            Map<Integer, String> map = ParseExcel.readExcelContent(is);
 
             //2.解析
             POIFSFileSystem fs = new POIFSFileSystem(is);

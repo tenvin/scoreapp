@@ -10,15 +10,15 @@ import java.util.Set;
 public class Zhuanye {
     @Id
     @GeneratedValue
-    private long zyId;
+    private int zyId;
 
     private String zyName;//专业名
 
-    @OneToMany(cascade = {CascadeType.ALL},fetch = FetchType.LAZY)
-    @JoinColumn(name = "zyId")
-    private Set<Kemu> kemus;
-
     public Zhuanye() {
+    }
+
+    public Zhuanye(String zyName) {
+        this.zyName = zyName;
     }
 
     public String getZyName() {
@@ -29,11 +29,12 @@ public class Zhuanye {
         this.zyName = zyName;
     }
 
-    public Set<Kemu> getKemus() {
-        return kemus;
-    }
 
-    public void setKemus(Set<Kemu> kemus) {
-        this.kemus = kemus;
+    @Override
+    public String toString() {
+        return "Zhuanye{" +
+                "zyId=" + zyId +
+                ", zyName='" + zyName + '\'' +
+                '}';
     }
 }

@@ -11,7 +11,7 @@ import javax.persistence.Id;
 public class Xueqi {
     @Id
     @GeneratedValue
-    private long xqId;
+    private int xqId;
 
     private String xqName;
 

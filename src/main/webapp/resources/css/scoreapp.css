@@ -69,3 +69,7 @@ html, body {
 .select-margin select {
     margin-right: 20px;
 }
+
+.form-inline div{
+    margin-right: 20px;
+}
