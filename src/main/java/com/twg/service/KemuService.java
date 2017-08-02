@@ -12,6 +12,6 @@ import java.util.List;
  * Created by tenvin on 2017/7/26.
  */
 
-public interface KemuService extends BaseService<Kemu,Long>{
+public interface KemuService extends BaseService<Kemu,Integer>{
 
 }

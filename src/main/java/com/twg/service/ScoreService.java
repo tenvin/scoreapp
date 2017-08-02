@@ -14,6 +14,12 @@ import java.util.List;
  * Created by tenvin on 2017/7/26.
  */
 
-public interface ScoreService extends BaseService<Score,Long>{
+public interface ScoreService extends BaseService<Score,Integer>{
+    public List<Score> queryByXsName(String name);
 
+    public List<Score> queryByBjName(String name);
+
+    public List<Score> queryByZyName(String name);
+
+    public List<Score> queryByKmName(String name);
 }

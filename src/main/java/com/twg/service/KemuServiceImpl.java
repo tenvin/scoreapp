@@ -8,7 +8,7 @@ import java.util.List;
  * Created by tenvin on 2017/7/30.
  */
 public class KemuServiceImpl implements KemuService {
-    public Kemu get(Long aLong) {
+    public Kemu get(Integer id) {
         return null;
     }
 
@@ -16,7 +16,11 @@ public class KemuServiceImpl implements KemuService {
         return null;
     }
 
-    public void delete(Long aLong) {
+    public List<Kemu> save(List<Kemu> list) {
+        return null;
+    }
+
+    public void delete(Integer id) {
 
     }
 

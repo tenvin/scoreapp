@@ -19,7 +19,7 @@ public class XueqiServiceImpl implements XueqiService {
     @Autowired
     XueqiRepository xueqiRepository;
 
-    public Xueqi get(Long aLong) {
+    public Xueqi get(Integer aLong) {
         return null;
     }
 
@@ -27,7 +27,11 @@ public class XueqiServiceImpl implements XueqiService {
         return null;
     }
 
-    public void delete(Long aLong) {
+    public List<Xueqi> save(List<Xueqi> list) {
+        return null;
+    }
+
+    public void delete(Integer id) {
 
     }
 

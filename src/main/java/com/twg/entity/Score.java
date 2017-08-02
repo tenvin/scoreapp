@@ -92,7 +92,7 @@ public class Score {
         this.banji = banji;
     }
 
-    public Score(Banji banji, Student student, Zhuanye zhuanye, Kemu kemu, Xueqi xueqi, float fenshu) {
+    public Score(Xueqi xueqi,Zhuanye zhuanye, Banji banji, Student student,  Kemu kemu,  float fenshu) {
         this.banji = banji;
         this.student = student;
         this.zhuanye = zhuanye;

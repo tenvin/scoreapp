@@ -25,6 +25,6 @@ public class KemuServiceTest {
 
     @Test
     public void testFindOne(){
-        System.out.println("kemu="+kemuRepository.getOne(1L));
+        System.out.println("kemu="+kemuRepository.getOne(1));
     }
 }

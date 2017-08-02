@@ -69,6 +69,8 @@ public class MainController {
 
             logger.info("scores={}",scores);
 
+            scoreService.save(scores);
+
 
         } catch (IOException e) {
             e.printStackTrace();

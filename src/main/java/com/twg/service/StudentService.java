@@ -12,7 +12,7 @@ import java.util.List;
  * Created by tenvin on 2017/7/25.
  */
 
-public interface StudentService extends BaseService<Student,Long>{
+public interface StudentService extends BaseService<Student,Integer>{
 
     public Student findByName(String name);
 

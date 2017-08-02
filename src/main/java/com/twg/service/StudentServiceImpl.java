@@ -20,16 +20,20 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.findByXsName(name);
     }
 
-    public Student get(Long aLong) {
-        return studentRepository.findOne(aLong);
+    public Student get(Integer integer) {
+        return null;
     }
 
     public Student save(Student student) {
         return studentRepository.save(student);
     }
 
-    public void delete(Long aLong) {
-        studentRepository.delete(aLong);
+    public List<Student> save(List<Student> list) {
+        return null;
+    }
+
+    public void delete(Integer id) {
+        studentRepository.delete(id);
     }
 
     public List<Student> findAll() {
